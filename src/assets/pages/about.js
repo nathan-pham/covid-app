@@ -1,13 +1,9 @@
-import { Link } from "react-router-dom"
+import Back from "../components/back.js"
 
 const About = () => {
     return (
         <div id="root-about">
-            <Link to="/">
-                <button className="primary-background back-button">
-                    <i className="fas fa-chevron-left"></i>
-                </button>
-            </Link>
+            <Back />
             <h1 className="primary-color title">About</h1>
             <section className="text">
                 <p>Straze is a simple COVID-19 simulation to help others understand how quickly a virus can spread.</p>

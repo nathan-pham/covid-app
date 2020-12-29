@@ -2,7 +2,7 @@ import { width, height, settings } from "../config.js"
 import { random, distance } from "../libs/utils.js"
 import generate from "../libs/name.js"
 
-const { colors, covid } = settings
+const { colors, covid, speed } = settings
 
 class Person {
   x = random(10, width - 10)
@@ -12,8 +12,8 @@ class Person {
   name = generate()
 
   vector = {
-    x: random(-2, 2) / 3,
-    y: random(-2, 2) / 3
+    x: random(-3, 3) / 3,
+    y: random(-3, 3) / 3
   }
 
   constructor(infected) {
@@ -45,7 +45,7 @@ class Person {
       if(Math.random() <= covid.dying) {
         this.color = colors.deceased
       }
-    }, random(10, 15) * 1000)
+    }, (random(10, 15) * 1000) - (speed / 3))
   }
 
   collision(people) {

@@ -5,6 +5,7 @@ import Person from "../components/game/classes/person.js"
 import * as config from "../components/game/config.js"
 
 import Canvas from "../components/canvas"
+import Back from "../components/back.js"
 
 const Game = () => {
     const [ modal, showModal ] = useState(false)
@@ -27,8 +28,10 @@ const Game = () => {
         people.forEach(person => {
             person.collision(people)
             person.update()
-            person.render(ctx)
-
+            if((person.deceased && config.settings.showDead) || !person.deceased) {
+                person.render(ctx)
+            }
+            
             if(person.infected) {
                 safe ++    
             }
@@ -47,6 +50,7 @@ const Game = () => {
     return (
         <div id="root-game">
             <Canvas draw={ draw } />
+            <Back />
             <div className="canvas-overlay flex align-center justify-center" style={ {
                 display: modal ? "flex" : "none"
             } }>
