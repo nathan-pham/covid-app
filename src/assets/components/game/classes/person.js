@@ -1,6 +1,8 @@
-import { width, height, covid, colors } from "../config.js"
+import { width, height, settings } from "../config.js"
 import { random, distance } from "../libs/utils.js"
 import generate from "../libs/name.js"
+
+const { colors, covid } = settings
 
 class Person {
   x = random(10, width - 10)

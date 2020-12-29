@@ -5,7 +5,7 @@ const Settings = () => {
         <div id="root-settings">
             <Link to="/">
                 <button className="primary-background back-button">
-                    <i className="fas fa-arrow-left"></i>
+                    <i className="fas fa-chevron-left"></i>
                 </button>
             </Link>
             <h1 className="primary-color title">Settings</h1>
