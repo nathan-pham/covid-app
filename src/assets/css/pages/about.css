@@ -2,6 +2,15 @@
     padding: 2rem;
 }
 
-#root-about h1 {
+#root-about h1, 
+#root-about h2 {
+    margin: 1.5rem 0;
+}
+
+#root-about .text p {
     margin: 0 0 1rem 0;
+}
+
+#root-about .text p:last-child {
+    margin: 0;
 }

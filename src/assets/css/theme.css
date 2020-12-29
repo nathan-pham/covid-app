@@ -53,3 +53,9 @@ h2.title {
     border-radius: 0.25rem;
     margin: 0 0 1rem 0;
 }
+
+a {
+    font-size: 1.25rem;
+    color: var(--primary);
+    text-decoration: underline;
+}
