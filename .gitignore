@@ -10,6 +10,7 @@
 
 # production
 /build
+keystore.jks
 
 # misc
 .DS_Store
