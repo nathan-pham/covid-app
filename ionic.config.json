@@ -1,0 +1,7 @@
+{
+  "name": "Straze",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

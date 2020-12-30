@@ -1,6 +1,7 @@
 import  { useState } from "react"
 
 import Back from "../components/back.js"
+import { ColorKey } from "../components/pages/settings"
 import { settings, defaultSettings } from "../components/game/config.js"
 
 let cache = settings
@@ -58,6 +59,14 @@ const Settings = () => {
                 <Input name="dead" displayName="Show Dead" type="checkbox" />
             </section>
             <button className="primary-background restore" onClick={ restoreDefault }>Restore Default Settings</button>
+            <h2 className="primary-color title">Constant</h2>
+            <section className="text">
+                <p>These settings are for reference and cannot be changed.</p>
+                <ColorKey name="Healthy" color={ settings.colors.healthy } />
+                <ColorKey name="Infected" color={ settings.colors.infected } />
+                <ColorKey name="Recovered" color={ settings.colors.recovered } />
+                <ColorKey name="Deceased" color={ settings.colors.deceased } />
+            </section>
             <h2 className="primary-color title">Privacy</h2>
             <section className="text">
                 <p>This is an offline app; data is never shared with a server or another provider. Settings persist in your local storage and will disappear if you delete this app.</p>

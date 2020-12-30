@@ -11,10 +11,12 @@ import Back from "../components/back.js"
 const Game = () => {
     const [ modal, showModal ] = useState(false)
 
-    const people = [ ]
+    const people = []
     const graph = new Graph()
+    graph.reset()
 
     let safe = modal ? "SHOW_MODAL" : 0
+    let timer
 
     let infectedGenesis = (config.settings.infected / 100) * config.settings.healthy
 
@@ -46,22 +48,24 @@ const Game = () => {
                 person.render(ctx)
             }
 
-            for(const [key, value] of Object.entries(bar)) {
+            for(const [key] of Object.entries(bar)) {
                 if(person[key]) {
-                    bar[key] = value + 1
+                    bar[key]++
                 }
             }
 
             if(person.infected) {
-                safe ++    
+                safe ++
             }
         })
 
         graph.update(bar)
         graph.render(ctx)
 
-        if(safe === 0) {
-            showModal(true)
+        if(safe === 0 && !timer) {
+            timer = setTimeout(() => {
+                showModal(true)
+            }, 3000)
         }
     }
 

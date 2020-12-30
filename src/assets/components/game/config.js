@@ -1,6 +1,5 @@
 const width = window.innerWidth
 const height = window.innerHeight
-const version = 1
 
 const defaultSettings = {
     dead: true,
@@ -12,29 +11,34 @@ const defaultSettings = {
         dying: 0.1
     },
     colors: {
-        healthy: "#63c8f2",
-        recovered: "#d88dbc",
-        infected: "#5bba4b",
-        deceased: "#000"
-    },
-    version
-}
-
-let settings = defaultSettings
-
-try {
-    settings = JSON.parse(localStorage.getItem("settings"))
-    if(version !== settings.version || !settings) {
-        settings = defaultSettings
+        healthy: "#1d7874",
+        recovered: "#f4c095",
+        infected: "#ee1e31",
+        deceased: "#071e22"
     }
 }
-catch(e) {
-    settings = defaultSettings
+
+
+
+const generateSettings = () => {
+    let _settings = defaultSettings
+
+    try {
+        _settings = JSON.parse(localStorage.getItem("settings")) || defaultSettings
+    }
+    catch(e) {
+        _settings = defaultSettings
+    }
+
+    return _settings
 }
+
+const settings = generateSettings()
 
 export {
   width,
   height,
   settings,
-  defaultSettings
+  defaultSettings,
+  generateSettings
 }

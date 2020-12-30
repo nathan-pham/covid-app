@@ -4,7 +4,7 @@ const Index = () => {
     return (
         <div id="root-index" className="flex direction-column justify-center align-center">
             <main>
-                <i className="fas fa-virus logo"></i>
+                <img className="logo" src="/icons/apple-icon.png" alt="Strave logo"/>
                 <h1 className="primary-color">STRAZE</h1>
                 <div className="flex justify-center align-center">
                     <Button icon="cog" type="secondary" href="settings" />
