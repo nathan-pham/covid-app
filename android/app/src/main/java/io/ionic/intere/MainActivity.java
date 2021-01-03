@@ -1,4 +1,4 @@
-package io.ionic.straze;
+package io.ionic.intere;
 
 import android.os.Bundle;
 

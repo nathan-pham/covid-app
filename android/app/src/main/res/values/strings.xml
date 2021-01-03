@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Straze</string>
-    <string name="title_activity_main">Straze</string>
-    <string name="package_name">io.ionic.straze</string>
-    <string name="custom_url_scheme">io.ionic.straze</string>
+    <string name="app_name">Intere</string>
+    <string name="title_activity_main">Intere</string>
+    <string name="package_name">io.ionic.intere</string>
+    <string name="custom_url_scheme">io.ionic.intere</string>
 </resources>
